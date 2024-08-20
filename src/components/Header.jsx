@@ -2,7 +2,7 @@ export default function Header({ page, setPage }) {
   return (
     <>
       <div className="w-full max-w-screen-xl mx-auto bg-gray-100 fixed top-0 z-10 ">
-        <div className="flex items-center justify-between px-4 ">
+        <div className="flex items-center justify-between px-4 pt-1 ">
           <div className="flex items-center gap-4">
             <img
               src={`${import.meta.env.BASE_URL}/logo.jpg`}
