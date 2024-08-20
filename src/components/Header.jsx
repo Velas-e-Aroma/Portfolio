@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <>
-      <div className="h-[72px] w-full flex items-center justify-between px-4  bg-gray-100 absolute z-10 ">
+      <div className="h-[72px] w-full max-w-screen-xl mx-auto flex items-center justify-between px-4  bg-gray-100 absolute z-10 ">
         <div className="flex items-center gap-4">
           <img
             src={`${import.meta.env.BASE_URL}/logo.jpg`}
