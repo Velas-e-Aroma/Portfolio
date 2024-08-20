@@ -30,7 +30,7 @@ export default function Header({ page, setPage }) {
             <i className="fas fa-phone-square ms-3"></i>
           </a>
         </div>
-        <div className="flex flex-row justify-between mt-[20px] gap-4 overflow-x-auto w-full pb-3 px-4">
+        <div className="flex flex-row justify-between mt-[10px] gap-4 overflow-x-auto w-full py-1 px-4 bg-[#e3e6e6]">
           {[
             { label: 'Home', pageName: 'home', icon: 'fas fa-home' },
             { label: 'Catálogo', pageName: 'catalog', icon: 'fas fa-search' },
