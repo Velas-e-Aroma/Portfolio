@@ -3,6 +3,7 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 import Slide from './components/Slide';
 import ResumeCatalog from './components/ResumeCatalog';
 import BrowseCategories from './components/BrowseCategories';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
         <ResumeCatalog />
         <BrowseCategories />
       </div>
-
+      <Footer />
       <ScrollToTopButton />
     </div>
   );

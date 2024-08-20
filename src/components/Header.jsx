@@ -28,7 +28,7 @@ export default function Header() {
           <span className="md:block hidden">Atendimento</span>
           <i className="fas fa-phone-square ms-3"></i>
         </a>
-      </div>
+      
     </>
   );
 }
