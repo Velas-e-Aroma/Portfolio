@@ -15,7 +15,6 @@ export default function BrowseCategories() {
         <ItemCategories title="Verdes" />
         <ItemCategories title="Verdes" />
         <ItemCategories title="Verdes" />
-        
       </div>
     </div>
   );

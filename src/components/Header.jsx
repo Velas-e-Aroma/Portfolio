@@ -30,13 +30,17 @@ export default function Header({ page, setPage }) {
             <i className="fas fa-phone-square ms-3"></i>
           </a>
         </div>
-        <div className="w-full flex items-center justify-between p-1 mt-1 bg-[#e3e6e6] px-4">
+        <div className="flex flex-row justify-between mt-[20px] gap-4 overflow-x-auto w-full pb-3 px-4">
           {[
-            { label: 'Home', pageName: 'home' },
-            { label: 'Catálogo', pageName: 'catalog' },
-            { label: 'Sobre as velas', pageName: 'about' },
-            { label: 'Monte sua vela', pageName: 'order' },
-          ].map(({ label, pageName }) => (
+            { label: 'Home', pageName: 'home', icon: 'fas fa-home' },
+            { label: 'Catálogo', pageName: 'catalog', icon: 'fas fa-search' },
+            { label: 'Sobre', pageName: 'about', icon: 'fas fa-info-circle' },
+            {
+              label: 'Monte sua vela',
+              pageName: 'order',
+              icon: 'fas fa-shopping-cart',
+            },
+          ].map(({ label, pageName, icon }) => (
             <p
               key={pageName}
               onClick={() => setPage(pageName)}
@@ -44,7 +48,9 @@ export default function Header({ page, setPage }) {
                 page === pageName ? 'font-bold' : ''
               } cursor-pointer`}
             >
-              {label}
+              <spam className="sm:block hidden">{label}</spam>
+
+              <i className={`${icon} sm:hidden block`}></i>
             </p>
           ))}
         </div>
