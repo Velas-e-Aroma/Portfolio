@@ -4,7 +4,7 @@ export default function Header() {
       <div className="h-[72px] w-full flex items-center justify-between px-4  bg-gray-100 absolute z-10 ">
         <div className="flex items-center gap-4">
           <img
-            src="/public/logo.jpg"
+            src={`${import.meta.env.BASE_URL}/logo.jpg`}
             alt="logo"
             className="h-[50px] rounded-lg"
           />
