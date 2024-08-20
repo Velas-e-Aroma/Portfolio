@@ -55,22 +55,6 @@ export default function Slide() {
       >
         <i className="fas fa-chevron-right"></i>
       </button>
-
-      <div className="flex justify-center py-4 space-x-2">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-4 h-4 bg-gray-400 rounded-full cursor-pointer ${
-              index === currentIndex ? 'bg-gray-800' : ''
-            }`}
-            style={{
-              boxShadow:
-                '0px 4px 6px -1px rgba(0, 0, 0, 0.2), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',
-            }}
-          ></div>
-        ))}
-      </div>
     </div>
   );
 }
