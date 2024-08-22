@@ -11,8 +11,8 @@ export default function FeedCatalog({ setWallpaper }) {
       {images.map((image, index) => (
         <div
           key={index}
-          className="w-[200px] h-[200px] bg-cover bg-center rounded-2xl"
-          style={{ backgroundImage: `url(${image})` }}
+          className="md:w-[200px] w-[150px] h-[200px] bg-cover bg-center rounded-2xl cursor-pointer transition-transform transform hover:scale-105 hover:shadow-lg"
+          style={{ backgroundImage: `url(${image})`}}
           onClick={() => setWallpaper(image)}
         />
       ))}

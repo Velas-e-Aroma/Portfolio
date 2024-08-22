@@ -1,11 +1,11 @@
 export default function Wallpaper({ wallpaper }) {
   return (
-    <div className="w-full bg-white  rounded-md mt-[50px] h-[300px] relative">
+    <div className="w-full bg-white rounded-md mt-[50px] h-[350px] relative">
       <img src={wallpaper} alt="wallpaper" className="w-full h-full" />
      
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 240"
+        viewBox="0 0 1440 220"
         className="absolute bottom-0"
       >
         <path
