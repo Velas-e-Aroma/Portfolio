@@ -24,7 +24,7 @@ export default function Slide() {
   };
 
   return (
-    <div className="relative w-full mx-auto">
+    <div className="relative w-full mx-auto mt-[20px]">
       {/* Slides */}
       <div className="h-[360px] w-full overflow-hidden relative">
         <img

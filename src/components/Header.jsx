@@ -2,7 +2,7 @@ export default function Header({ page, setPage }) {
   return (
     <>
       <div className="w-full max-w-screen-xl mx-auto bg-gray-100 fixed top-0 z-10 ">
-        <div className="flex items-center justify-between px-4 pt-1 ">
+        <div className="flex items-center justify-between px-4 pt-1 pb-1">
           <div className="flex items-center gap-4">
             <img
               src={`${import.meta.env.BASE_URL}/logo.jpg`}
@@ -30,16 +30,16 @@ export default function Header({ page, setPage }) {
             <i className="fas fa-phone-square ms-3"></i>
           </a>
         </div>
-        <div className="flex flex-row justify-between mt-[10px] gap-4 overflow-x-auto w-full py-1 px-4 bg-[#e3e6e6]">
+        <div className="flex flex-row justify-between gap-4 overflow-x-auto w-full py-1 px-4 bg-[#e3e6e6]">
           {[
             { label: 'Home', pageName: 'home', icon: 'fas fa-home' },
-            { label: 'Catálogo', pageName: 'catalog', icon: 'fas fa-search' },
-            { label: 'Sobre', pageName: 'about', icon: 'fas fa-info-circle' },
             {
-              label: 'Monte sua vela',
+              label: 'Faça sua vela',
               pageName: 'order',
               icon: 'fas fa-shopping-cart',
             },
+            { label: 'Sobre', pageName: 'about', icon: 'fas fa-info-circle' },
+            { label: 'Catálogo', pageName: 'catalog', icon: 'fas fa-search' },
           ].map(({ label, pageName, icon }) => (
             <p
               key={pageName}

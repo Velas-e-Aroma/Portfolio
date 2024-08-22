@@ -6,6 +6,7 @@ import Slide from './components/Slide';
 import ResumeCatalog from './components/ResumeCatalog';
 import BrowseCategories from './components/BrowseCategories';
 import Footer from './components/Footer';
+import Wave from './components/Wave';
 
 export default function App() {
   const [page, setPage] = useState('home');
@@ -16,9 +17,10 @@ export default function App() {
       {page === 'home' ? (
         <>
           <Slide />
-          <div className="w-full px-4 m-0 p-0">
+          <div className="w-full m-0 p-0 relative">
             <ResumeCatalog />
-            <BrowseCategories />
+            <Wave />
+            
           </div>
         </>
       ) : null}
