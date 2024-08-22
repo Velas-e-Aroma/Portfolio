@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Card = () => {
   return (
     <StyledWrapper>
-      <div className="flip-card">
+      <div className="flip-card md:w-[200px] w-[150px] md:h-[260px] h-[220px]">
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <p className="title">FLIP CARD</p>
@@ -22,17 +22,17 @@ const Card = () => {
 const StyledWrapper = styled.div`
   .flip-card {
     background-color: transparent;
-    width: 210px;
-    height: 254px;
+
     perspective: 1000px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   .title {
-    font-size: 1.5em;
-    font-weight: 900;
+    font-size: 1.7em;
+    font-weight: 700;
     text-align: center;
     margin: 0;
+    letter-spacing: 1.5px;
   }
 
   .flip-card-inner {
@@ -40,8 +40,10 @@ const StyledWrapper = styled.div`
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.8s ease-in-out;
     transform-style: preserve-3d;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
   }
 
   .flip-card:hover .flip-card-inner {
@@ -50,40 +52,35 @@ const StyledWrapper = styled.div`
 
   .flip-card-front,
   .flip-card-back {
-    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border: 1px solid coral;
     border-radius: 1rem;
+    padding: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
   }
 
   .flip-card-front {
-    background: linear-gradient(
-      120deg,
-      bisque 60%,
-      rgb(255, 231, 222) 88%,
-      rgb(255, 211, 195) 40%,
-      rgba(255, 127, 80, 0.603) 48%
-    );
-    color: coral;
+    background: linear-gradient(135deg, #98bf90 20%, #70b066 80%);
+    color: #fff;
   }
 
   .flip-card-back {
-    background: linear-gradient(
-      120deg,
-      rgb(255, 174, 145) 30%,
-      coral 88%,
-      bisque 40%,
-      rgb(255, 185, 160) 78%
-    );
-    color: white;
+    background: linear-gradient(135deg, #44a442 20%, #289d42 80%);
+    color: #fff;
     transform: rotateY(180deg);
+  }
+
+  .flip-card:hover .flip-card-front,
+  .flip-card:hover .flip-card-back {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
   }
 `;
 

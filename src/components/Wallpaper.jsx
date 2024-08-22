@@ -1,19 +1,19 @@
 export default function Wallpaper({ wallpaper }) {
   return (
-    <div className="w-full bg-white rounded-md mt-[50px] h-[350px] relative">
-      <img src={wallpaper} alt="wallpaper" className="w-full h-full" />
-     
+    <div className="w-full bg-white rounded-md mt-[60px] md:h-[450px] h-[300px] relative">
+      <img src={`${import.meta.env.BASE_URL}/${wallpaper}`} alt="wallpaper" className="w-full h-full object-cover" />
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 220"
+        viewBox="0 0 1440 310"
         className="absolute bottom-0"
       >
         <path
           fill="#fff"
           fillOpacity="1"
-          d="M0,128L30,122.7C60,117,120,107,180,122.7C240,139,300,181,360,202.7C420,224,480,224,540,197.3C600,171,660,117,720,96C780,75,840,85,900,117.3C960,149,1020,203,1080,186.7C1140,171,1200,85,1260,80C1320,75,1380,149,1410,186.7L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+          d="M0,192L60,202.7C120,213,240,235,360,234.7C480,235,600,213,720,218.7C840,224,960,256,1080,272C1200,288,1320,288,1380,288L1440,288L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
         ></path>
       </svg>
+     
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Wallpaper from '../components/Wallpaper';
 import FeedCatalog from '../components/FeedCatalog';
 
 export default function Catalog() {
-  const imgBase = 'https://via.placeholder.com/300x200?text=Produto+1';
+  const imgBase = 'wallpaperBase.png'
   const [wallpaper, setWallpaper] = useState(imgBase);
 
   return (

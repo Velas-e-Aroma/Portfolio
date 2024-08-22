@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
       {isVisible && (
         <div
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 z-10 bg-[#00000035] hover:bg-[#00000050] text-white rounded-full lg:w-[50px] md:w-[40px] w-[30px] lg:h-[50px] md:h-[40px] h-[30px] flex items-center justify-center cursor-pointer"
+          className="fixed bottom-5 right-5 z-10 bg-[#238d4343] hover:bg-[#238d4354] text-white rounded-full lg:w-[50px] md:w-[40px] w-[30px] lg:h-[50px] md:h-[40px] h-[30px] flex items-center justify-center cursor-pointer"
           style={{
             boxShadow:
               '0px 4px 6px -1px rgba(0, 0, 0, 0.2), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',

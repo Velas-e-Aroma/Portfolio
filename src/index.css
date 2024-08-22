@@ -9,6 +9,12 @@
   transition: all 0.5s ease-in-out !important;
 }
 
+h1,
+h2,
+p {
+  font-family: 'pt-serif', serif !important;
+}
+
 body {
   background-color: #e3e6e6;
 }
@@ -26,4 +32,8 @@ body {
 
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.nameWeb {
+  font-family: 'dance-script', cursive !important;
 }

@@ -25,7 +25,7 @@ export default function App() {
             <ResumeCatalog />
             <Wave />
             <div className="w-full relative md:h-[600px] h-auto">
-              <div className="w-full flex md:flex-row flex-col">
+              <div className="w-full flex md:flex-row flex-col px-4">
                 <div className="md:w-[40%] w-full">
                   <FeedbackPhoto />
                 </div>
