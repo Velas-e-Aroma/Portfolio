@@ -8,6 +8,9 @@ import BrowseCategories from './components/BrowseCategories';
 import Footer from './components/Footer';
 import Wave from './components/Wave';
 import FeedbackPhoto from './components/FeedbackPhoto';
+import Wallpaper from './components/Wallpaper';
+import FeedCatalog from './components/FeedCatalog';
+import Catalog from './pages/Catalog';
 
 export default function App() {
   const [page, setPage] = useState('home');
@@ -33,7 +36,7 @@ export default function App() {
         </>
       ) : null}
 
-      {page === 'catalog' ? <ResumeCatalog /> : null}
+      {page === 'catalog' ? <Catalog /> : null}
 
       {page === 'categories' ? <BrowseCategories /> : null}
 
