@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-// Lista de imagens para o slider (substitua pelos seus próprios produtos ou imagens)
 const images = [
   'https://via.placeholder.com/300x200?text=Produto+1',
   'https://via.placeholder.com/300x200?text=Produto+2',

@@ -1,6 +1,6 @@
 export default function Wave() {
   return (
-    <div className="relative w-full h-[400px] mt-[-220px] z-[-1]">
+    <div className="w-full h-[120px] md:mt-[-220px] mt-[-800px] z-[-1] relative md:block hidden">
       <div className="w-full h-[130px] bg-[#70b066]"></div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path

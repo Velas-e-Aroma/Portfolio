@@ -7,6 +7,7 @@ import ResumeCatalog from './components/ResumeCatalog';
 import BrowseCategories from './components/BrowseCategories';
 import Footer from './components/Footer';
 import Wave from './components/Wave';
+import FeedbackPhoto from './components/FeedbackPhoto';
 
 export default function App() {
   const [page, setPage] = useState('home');
@@ -20,7 +21,14 @@ export default function App() {
           <div className="w-full m-0 p-0 relative">
             <ResumeCatalog />
             <Wave />
-            
+            <div className="w-full relative md:h-[600px] h-auto">
+              <div className="w-full flex md:flex-row flex-col">
+                <div className="md:w-[40%] w-full">
+                  <FeedbackPhoto />
+                </div>
+                <div className=" w-full z-[-2]"></div>
+              </div>
+            </div>
           </div>
         </>
       ) : null}
