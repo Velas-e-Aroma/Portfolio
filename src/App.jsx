@@ -52,7 +52,7 @@ export default function App() {
             <img
               src={`${import.meta.env.BASE_URL}/logo.jpg`}
               alt="logo"
-              className="h-[40px] rounded-lg transform transition-transform duration-300 hover:scale-110 lg:mt-0 mt-[-5px]"
+              className="h-[40px] rounded-lg transform transition-transform duration-300 hover:scale-110"
             />
             <h1
               className={`md:block hidden ${textColor} font-bold font-mono text-xl tracking-wide`}
@@ -83,13 +83,12 @@ export default function App() {
             ))}
           </div>
 
-          <a
-            href="https://github.com/vela-e-aroma/vela-e-aroma"
-            className={`flex justify-center items-center text-white bg-[#5b3119] lg:px-4 pe-[7px] ps-[3px] lg:mt-0 mt-[-5px] rounded-lg transition-colors duration-300 hover:bg-[#564533]`}
+          <button
+            className={`flex justify-center items-center text-white bg-[#5b3119] lg:px-4 pe-[7px] ps-[3px] rounded-lg transition-colors duration-300 hover:bg-[#564533]`}
           >
             <span className="md:block hidden font-semibold">Atendimento</span>
             <i className="fas fa-phone-square ms-1 text-lg"></i>
-          </a>
+          </button>
         </div>
       </nav>
       <div className="w-full m-0 p-0 h-screen overflow-hidden relative max-w-[1440px]">
