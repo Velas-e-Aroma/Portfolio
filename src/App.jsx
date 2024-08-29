@@ -5,7 +5,7 @@ import Feed from './components/Feed';
 
 export default function App() {
   const [page, setPage] = useState('home');
-  const [bgColor, setBgColor] = useState('bg-transparent');
+  const [bgColor, setBgColor] = useState('lg:bg-transparent');
   const [textColor, setTextColor] = useState('text-white');
 
   useEffect(() => {
