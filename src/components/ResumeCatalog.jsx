@@ -5,7 +5,7 @@ export default function ResumeCatalog() {
     {
       id: 1,
       img: 'vela1.png',
-      title: 'Veja nosso site',
+      title: 'Home',
       text: 'De uma olhada na home e descubra mais sobre a loja',
       onLink: false,
       link: '#',
