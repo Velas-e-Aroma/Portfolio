@@ -1,31 +1,53 @@
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import ResumeCatalog from './components/ResumeCatalog';
+import Feed from './components/Feed';
 
 export default function App() {
-  const [isVisible, setIsVisible] = useState(false);
   const [page, setPage] = useState('home');
-
   const [bgColor, setBgColor] = useState('bg-transparent');
   const [textColor, setTextColor] = useState('text-white');
 
-  window.onscroll = () => {
-    if (window.scrollY > 72) {
-      setBgColor('lg:bg-white');
-      setTextColor('text-[#564533]');
-    } else {
-      setBgColor('lg:bg-transparent');
-      setTextColor('text-white');
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 72) {
+        setBgColor('lg:bg-white');
+        setTextColor('text-[#564533]');
+      } else {
+        setBgColor('lg:bg-transparent');
+        setTextColor('text-white');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div className="flex-1 w-full max-w-screen-xl mx-auto border border-[#ccc] m-0 p-0">
       <nav
         className={`w-full ${bgColor} bg-white h-[50.57px] max-w-[1420px] mx-auto fixed top-0 z-10`}
       >
-        <div className="max-w-[920px] mx-auto flex items-center justify-between  px-4 pt-2 pb-2 ">
+        <div className="max-w-[920px] mx-auto flex items-center justify-between  px-4 pt-1 pb-2 ">
           <div className="flex items-center gap-4">
             <img
               src={`${import.meta.env.BASE_URL}/logo.jpg`}
@@ -90,12 +112,16 @@ export default function App() {
           </p>
         </div>
       </div>
-      <div className="w-full m-0 p-0 relative max-w-[1420px] mt-[-50px]">
+      <div className="w-full m-0 p-0 relative max-w-[1420px] mt-[-50px] reveal">
         <ResumeCatalog />
       </div>
-      <div className="w-full m-0 p-0 relative max-w-[1420px] h-screen">
-        <h2 className="text-[#564533] text-3xl font-bold text-center mt-10">Comentarios de quem ja comprou</h2>
-        
+      <div className="w-full m-0 p-0 relative max-w-[1420px] h-screen reveal">
+        <h2 className="text-[#564533] text-3xl font-bold text-center mt-10">
+          Comentarios de quem ja comprou
+        </h2>
+        <div className="w-full m-0 p-0 reveal">
+          <Feed />
+        </div>
       </div>
 
       <ScrollToTopButton />
