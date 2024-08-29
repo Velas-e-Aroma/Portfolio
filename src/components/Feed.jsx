@@ -45,7 +45,7 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className="w-full m-0 p-0 relative max-w-[1420px] h-[300px] mt-10 overflow-hidden lg:px-0 px-4">
+    <div className="w-full m-0 p-0 relative max-w-[1420px] h-[300px] mt-10 overflow-hidden">
       <div
         ref={scrollRef}
         className="flex space-x-8 overflow-x-auto no-scrollbar"
