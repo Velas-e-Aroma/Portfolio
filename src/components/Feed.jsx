@@ -2,11 +2,26 @@ import React, { useEffect, useRef } from 'react';
 
 const Feed = () => {
   const comments = [
-    { text: "Ótimo produto! Deixou minha casa super aconchegante.", author: "Maria S." },
-    { text: "Amei o aroma, realmente faz diferença no ambiente!", author: "João P." },
-    { text: "Entrega rápida e produto de qualidade, recomendo.", author: "Ana R." },
-    { text: "Minha casa está muito mais agradável com essa vela.", author: "Carlos M." },
-    { text: "Excelente atendimento e produtos maravilhosos.", author: "Fernanda T." },
+    {
+      text: 'Ótimo produto! Deixou minha casa super aconchegante.',
+      author: 'Maria S.',
+    },
+    {
+      text: 'Amei o aroma, realmente faz diferença no ambiente!',
+      author: 'João P.',
+    },
+    {
+      text: 'Entrega rápida e produto de qualidade, recomendo.',
+      author: 'Ana R.',
+    },
+    {
+      text: 'Minha casa está muito mais agradável com essa vela.',
+      author: 'Carlos M.',
+    },
+    {
+      text: 'Excelente atendimento e produtos maravilhosos.',
+      author: 'Fernanda T.',
+    },
   ];
 
   const scrollRef = useRef(null);
@@ -14,6 +29,9 @@ const Feed = () => {
   useEffect(() => {
     const scroll = () => {
       if (scrollRef.current) {
+        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+          scrollRef.current.scrollLeft = 0;
+        }
         scrollRef.current.scrollBy({
           left: 1,
           behavior: 'smooth',
@@ -32,10 +50,10 @@ const Feed = () => {
         ref={scrollRef}
         className="flex space-x-8 overflow-x-auto no-scrollbar"
       >
-        {comments.map((comment, index) => (
+        {[...comments, ...comments].map((comment, index) => (
           <div
             key={index}
-            className="min-w-[350px] bg-white p-6 rounded-lg shadow-lg border border-[#e5e5e5]"
+            className="min-w-[350px] inline-block bg-white p-6 rounded-lg shadow-lg border border-[#e5e5e5]"
           >
             <p className="text-lg italic text-[#564533]">"{comment.text}"</p>
             <p className="text-right mt-4 text-[#7d6a58] font-semibold">
