@@ -1,17 +1,31 @@
 import styled from 'styled-components';
 
-const Card = () => {
+const Card = ({ key, img, title, text, onLink, link }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper key={key}>
       <div className="flip-card md:w-[200px] w-[150px] md:h-[260px] h-[220px]">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <p className="title">FLIP CARD</p>
-            <p>Hover Me</p>
+            <img
+              src={`${import.meta.env.BASE_URL}/card/${img}`}
+              alt="logo"
+              className="w-full h-full object-cover"
+            />
+            <h1>
+              <span className="title">{title}</span>
+            </h1>
           </div>
           <div className="flip-card-back">
-            <p className="title">BACK</p>
-            <p>Leave Me</p>
+            <p className="text">{text}</p>
+            {onLink && (
+              <a
+                href={link}
+                target="_blank"
+                className="mt-10 border border-[#f2f2f2] px-4 py-2 rounded-lg hover:bg-[#f2f2f2] hover:text-black transition-all duration-300"
+              >
+                Veja mais
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -28,9 +42,15 @@ const StyledWrapper = styled.div`
   }
 
   .title {
-    font-size: 1.7em;
+    font-size: 1.2em;
     font-weight: 700;
     text-align: center;
+    margin: 0;
+    letter-spacing: 1.5px;
+  }
+
+  .text {
+    font-size: 1em;
     margin: 0;
     letter-spacing: 1.5px;
   }
@@ -62,20 +82,21 @@ const StyledWrapper = styled.div`
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 1rem;
-    padding: 20px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+    overflow: hidden;
   }
 
   .flip-card-front {
-    background: linear-gradient(135deg, #98bf90 20%, #70b066 80%);
+    background: linear-gradient(130deg, #5b3119 20%, #564533 80%);
     color: #fff;
   }
 
   .flip-card-back {
-    background: linear-gradient(135deg, #44a442 20%, #289d42 80%);
+    background: linear-gradient(135deg, #5b3119 20%, #5b3119 80%);
     color: #fff;
     transform: rotateY(180deg);
+    padding: 10px;
   }
 
   .flip-card:hover .flip-card-front,

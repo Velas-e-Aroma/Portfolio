@@ -16,7 +16,15 @@ p {
 }
 
 body {
-  background-color: #e3e6e6;
+  background: rgb(204, 190, 169);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(204, 190, 169, 1) 0%,
+    rgba(227, 218, 201, 1) 45%,
+    rgba(225, 214, 196, 1) 91%
+  );
+ 
+  
 }
 
 @keyframes fadeIn {
