@@ -85,13 +85,17 @@ export default function App() {
           >
             Compre agora sua vela
           </a>
-          <p className="lg:text-lg text-[#f7f7f7] lg:mt-7 sm:mt-5 mt-[10%]">
+          <p className="text-[#f7f7f7] lg:mt-7 sm:mt-5 mt-[10%] lg:text-xl text-[20px] px-16">
             Sempre temos vela e aroma para a sua casa
           </p>
         </div>
       </div>
       <div className="w-full m-0 p-0 relative max-w-[1420px] mt-[-50px]">
         <ResumeCatalog />
+      </div>
+      <div className="w-full m-0 p-0 relative max-w-[1420px] h-screen">
+        <h2 className="text-[#564533] text-3xl font-bold text-center mt-10">Comentarios de quem ja comprou</h2>
+        
       </div>
 
       <ScrollToTopButton />
