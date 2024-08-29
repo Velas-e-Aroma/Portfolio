@@ -43,9 +43,9 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex-1 w-full max-w-screen-xl mx-auto border border-[#ccc] m-0 p-0">
+    <div className="flex-1 w-full max-w-[1440px] mx-auto border border-[#ccc] m-0 p-0">
       <nav
-        className={`w-full ${bgColor} bg-white h-[50.57px] max-w-[1420px] mx-auto fixed top-0 z-10`}
+        className={`w-full ${bgColor} bg-white h-[50.57px] max-w-[1440px] mx-auto fixed top-0 z-10`}
       >
         <div className="max-w-[920px] mx-auto flex items-center justify-between  px-4 pt-1 pb-2 ">
           <div className="flex items-center gap-4">
@@ -92,7 +92,7 @@ export default function App() {
           </a>
         </div>
       </nav>
-      <div className="w-full m-0 p-0 h-screen overflow-hidden relative max-w-[1420px]">
+      <div className="w-full m-0 p-0 h-screen overflow-hidden relative max-w-[1440px]">
         <img
           src={`${import.meta.env.BASE_URL}/wallpaperHome.png`}
           className="w-full object-cover object-center h-screen"
@@ -112,10 +112,10 @@ export default function App() {
           </p>
         </div>
       </div>
-      <div className="w-full m-0 p-0 relative max-w-[1420px] mt-[-50px] reveal">
+      <div className="w-full m-0 p-0 relative max-w-[1440px] mt-[-50px] reveal">
         <ResumeCatalog />
       </div>
-      <div className="w-full m-0 p-0 relative max-w-[1420px] h-screen reveal">
+      <div className="w-full m-0 p-0 relative max-w-[1440px] h-screen reveal">
         <h2 className="text-[#564533] text-3xl font-bold text-center mt-10">
           Comentarios de quem ja comprou
         </h2>
