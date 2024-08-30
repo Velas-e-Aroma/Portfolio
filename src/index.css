@@ -23,8 +23,6 @@ body {
     rgba(227, 218, 201, 1) 45%,
     rgba(225, 214, 196, 1) 91%
   );
- 
-  
 }
 
 @keyframes fadeIn {
@@ -66,3 +64,6 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+.shadowBox {
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}

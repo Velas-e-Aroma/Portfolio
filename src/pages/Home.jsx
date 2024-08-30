@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Wallpaper from '../layout/Home/Wallpaper';
+import Wallpaper from '../layout/Wallpaper';
 import ResumeCatalog from '../layout/Home/ResumeCatalog';
 import CommentsFromPurchased from '../layout/Home/CommentsFromPurchased';
 
