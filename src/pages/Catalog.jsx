@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Wallpaper from '../layout/Wallpaper';
 import handleContactWhatsAppShop from '../utils/handleContactWhatsAppShop';
+import catalog from '../context/catalog';
 
 export default function Catalog() {
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Catalog() {
 
   const [existText, setExistText] = useState(false);
   const [candleName, setCandleName] = useState('');
+  const [candleNameMessage, setCandleNameMessage] = useState('');
   const [candleImage, setCandleImage] = useState('wallpaperShop.png');
   const [existFilter, setExistFilter] = useState(false);
   const [heightWallpaper, setHeightWallpaper] = useState('h-[300px]');
@@ -36,7 +38,7 @@ export default function Catalog() {
         Gostou da vela {candleName}
       </h1>
       <button
-        onClick={() => handleContactWhatsAppShop(candleName)}
+        onClick={() => handleContactWhatsAppShop(candleNameMessage)}
         className="lg:text-xl md:text-lg text-sm bg-[#f7f7f7] rounded-[30px] px-[25px] py-[10px] text-[#564533] hover:bg-[#564533] hover:text-[#f7f7f7]"
       >
         Compre agora e não perca a oportunidade
@@ -47,8 +49,9 @@ export default function Catalog() {
     </div>
   );
 
-  const handleSelectCandle = (name, image) => {
+  const handleSelectCandle = (name, nameMessage, image) => {
     setCandleName(name);
+    setCandleNameMessage(nameMessage);
     setExistText(true);
     setCandleImage(image);
     setExistFilter(true);
@@ -66,86 +69,24 @@ export default function Catalog() {
         />
       </div>
       <div className="w-full m-0 p-0 max-w-[940px] mx-auto reveal flex flex-wrap gap-4 md:justify-between justify-around lg:mt-[-100px] mt-[-40px] lg:px-0 px-4">
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 1', 'catalog/1.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/1.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 2', 'catalog/2.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/2.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 3', 'catalog/3.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/3.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 4', 'catalog/4.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/4.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 1', 'catalog/1.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/1.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 2', 'catalog/2.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/2.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 3', 'catalog/3.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/3.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
-        <button
-          className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
-          onClick={handleSelectCandle.bind(null, 'Vela 4', 'catalog/4.png')}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}/catalog/4.png`}
-            alt="catalog"
-            className="w-full object-cover object-center h-full"
-          />
-        </button>
+        {catalog.map((candle) => (
+          <button
+            key={candle.id}
+            className="md:w-[200px] w-[150px] rounded-lg overflow-hidden shadowBox mb-4"
+            onClick={handleSelectCandle.bind(
+              null,
+              candle.name,
+              candle.nameMessage,
+              `/catalog/${candle.img}`
+            )}
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}/catalog/${candle.img}`}
+              alt={candle.name}
+              className="w-full object-cover object-center h-full"
+            />
+          </button>
+        ))}
       </div>
     </div>
   );
