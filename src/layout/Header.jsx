@@ -18,14 +18,14 @@ export default function Header({ bgColor, textColor, setPage, page }) {
         </div>
         <div className=" gap-4 lg:flex hidden">
           {[
-            { label: 'Home', pageName: 'home', icon: 'fas fa-home' },
+            { label: 'Home', pageName: 'Home', icon: 'fas fa-home' },
             {
               label: 'Faça sua vela',
-              pageName: 'order',
+              pageName: 'Order',
               icon: 'fas fa-shopping-cart',
             },
-            { label: 'Sobre', pageName: 'about', icon: 'fas fa-info-circle' },
-            { label: 'Catálogo', pageName: 'catalog', icon: 'fas fa-search' },
+            { label: 'Sobre', pageName: 'About', icon: 'fas fa-info-circle' },
+            { label: 'Catálogo', pageName: 'Catalog', icon: 'fas fa-search' },
           ].map(({ label, pageName, icon }) => (
             <p
               key={pageName}

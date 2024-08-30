@@ -3,9 +3,10 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Home from './pages/Home';
+import Catalog from './pages/Catalog';
 
 export default function App() {
-  const [page, setPage] = useState('home');
+  const [page, setPage] = useState('Home');
   const [bgColor, setBgColor] = useState('lg:bg-transparent');
   const [textColor, setTextColor] = useState('text-white');
 
@@ -51,7 +52,9 @@ export default function App() {
         bgColor={bgColor}
         textColor={textColor}
       />
-      <Home page={page} setPage={setPage} />
+      {page === 'Home' && <Home page={page} setPage={setPage} />}
+      {page === 'Catalog' && <Catalog page={page} setPage={setPage} />}
+
       <Footer />
       <ScrollToTopButton />
     </div>
