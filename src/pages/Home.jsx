@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import ScrollToTopButton from './components/ScrollToTopButton';
-import Header from './layout/Header';
-import Footer from './layout/Footer';
-import Home from './pages/Home';
+import Wallpaper from '../layout/Home/Wallpaper';
+import ResumeCatalog from '../layout/Home/ResumeCatalog';
+import CommentsFromPurchased from '../layout/Home/CommentsFromPurchased';
 
-export default function App() {
-  const [page, setPage] = useState('home');
+export default function Home() {
   const [bgColor, setBgColor] = useState('lg:bg-transparent');
   const [textColor, setTextColor] = useState('text-white');
 
@@ -44,16 +42,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex-1 w-full max-w-[1440px] mx-auto border border-[#ccc] m-0 p-0">
-      <Header
-        page={page}
-        setPage={setPage}
-        bgColor={bgColor}
-        textColor={textColor}
-      />
-      <Home page={page} setPage={setPage} />
-      <Footer />
-      <ScrollToTopButton />
-    </div>
+    <>
+      <Wallpaper />
+      <div className="w-full m-0 p-0 relative max-w-[1440px] mt-[-50px] reveal">
+        <ResumeCatalog />
+      </div>
+      <CommentsFromPurchased />
+    </>
   );
 }
