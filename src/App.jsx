@@ -5,6 +5,8 @@ import Footer from './layout/Footer';
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 
+import contact from './context/contact';
+
 export default function App() {
   const [page, setPage] = useState('Home');
   const [bgColor, setBgColor] = useState('lg:bg-transparent');
@@ -51,9 +53,10 @@ export default function App() {
         setPage={setPage}
         bgColor={bgColor}
         textColor={textColor}
+        contact={contact}
       />
-      {page === 'Home' && <Home page={page} setPage={setPage} />}
-      {page === 'Catalog' && <Catalog page={page} setPage={setPage} />}
+      {page === 'Home' && <Home setPage={setPage} />}
+      {page === 'Catalog' && <Catalog setPage={setPage} />}
 
       <Footer />
       <ScrollToTopButton />

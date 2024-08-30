@@ -5,7 +5,7 @@ const dataCard = [
     title: 'Home',
     text: 'De uma olhada na home e descubra mais sobre a loja',
     onLink: false,
-    link: '#',
+    link: 'Home',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const dataCard = [
     title: 'Crie sua vela',
     text: 'Crie sua vela e compartilhe comigo para ela chegar ate você!',
     onLink: true,
-    link: '#',
+    link: 'Order',
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const dataCard = [
     title: 'Saiba mais',
     text: 'Conheça um pouco sobre a historia desta loja',
     onLink: true,
-    link: '#',
+    link: 'About',
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const dataCard = [
     title: 'Catalogo',
     text: 'Venha descobrir nosso catalogo de vela',
     onLink: true,
-    link: '#',
+    link: 'Catalog',
   },
 ];
 

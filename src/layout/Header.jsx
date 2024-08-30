@@ -1,4 +1,6 @@
-export default function Header({ bgColor, textColor, setPage, page }) {
+import handleContactWhatsApp from '../utils/handleContactWhatsApp';
+
+export default function Header({ bgColor, textColor, setPage, page, contact }) {
   return (
     <nav
       className={`w-full ${bgColor} bg-white h-[50.57px] max-w-[1440px] mx-auto fixed top-0 z-10`}
@@ -13,7 +15,7 @@ export default function Header({ bgColor, textColor, setPage, page }) {
           <h1
             className={`md:block hidden ${textColor} font-bold font-mono text-xl tracking-wide`}
           >
-            Velas e Aroma
+            {contact[0].nameShop}
           </h1>
         </div>
         <div className=" gap-4 lg:flex hidden">
@@ -41,6 +43,7 @@ export default function Header({ bgColor, textColor, setPage, page }) {
 
         <button
           className={`flex justify-center items-center text-white bg-[#5b3119] lg:px-4 pe-[7px] ps-[3px] rounded-lg transition-colors duration-300 hover:bg-[#564533]`}
+          onClick={() => handleContactWhatsApp()}
         >
           <span className="md:block hidden font-semibold">Atendimento</span>
           <i className="fas fa-phone-square ms-1 text-lg"></i>

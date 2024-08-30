@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Card = ({ key, img, title, text, onLink, link }) => {
+const Card = ({ key, img, title, text, onLink, link, setPage }) => {
   return (
     <StyledWrapper key={key}>
       <div className="flip-card md:w-[200px] w-[150px] md:h-[260px] h-[220px]">
@@ -18,13 +18,13 @@ const Card = ({ key, img, title, text, onLink, link }) => {
           <div className="flip-card-back">
             <p className="text">{text}</p>
             {onLink && (
-              <a
-                href={link}
+              <button
+                onClick={() => setPage(link)}
                 target="_blank"
                 className="mt-10 border border-[#f2f2f2] px-4 py-2 rounded-lg hover:bg-[#f2f2f2] hover:text-black transition-all duration-300"
               >
                 Veja mais
-              </a>
+              </button>
             )}
           </div>
         </div>
