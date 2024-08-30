@@ -31,7 +31,7 @@ export default function Catalog() {
   const [heightWallpaper, setHeightWallpaper] = useState('h-[300px]');
 
   const textWallpaper = (
-    <div className="text-white absolute xl:top-[30%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center xl:w-[60%] lg:w-[80%] w-[100%]">
+    <div className="text-white absolute xl:top-[30%] lg:top-1/2 top-[250px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center xl:w-[60%] lg:w-[80%] w-[100%]">
       <h1 className="lg:text-5xl text-3xl font-bold lg:mb-10 sm:mb-5 mb-[10%] lg:px-0 px-2">
         Gostou da vela {candleName}
       </h1>
